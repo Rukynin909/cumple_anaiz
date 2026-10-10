@@ -1,0 +1,358 @@
+/* =========================================================
+   Tokens de diseño
+   Paleta: rosa chicle, crema, lavanda y dorado estrellita
+========================================================= */
+:root {
+  --rosa-fondo: #ffe3ee;
+  --rosa-fuerte: #ff6fa5;
+  --rosa-suave: #ffc4dd;
+  --crema: #fff8f3;
+  --lavanda: #c9a7eb;
+  --dorado: #ffd166;
+  --texto: #6b3f63;
+  --texto-suave: #9a6d92;
+  --sombra: rgba(255, 111, 165, 0.25);
+
+  --fuente-titulo: 'Baloo 2', system-ui, sans-serif;
+  --fuente-texto: 'Quicksand', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--texto);
+  background: var(--rosa-fondo);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   Fondo flotante (corazones / estrellas generados por JS)
+========================================================= */
+.fondo-flotante {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particula-flotante {
+  position: absolute;
+  top: 100%;
+  opacity: 0.7;
+  animation: flotar linear infinite;
+  will-change: transform;
+}
+
+@keyframes flotar {
+  to {
+    transform: translateY(-115vh) rotate(20deg);
+  }
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: radial-gradient(circle at 50% 20%, var(--rosa-suave) 0%, var(--rosa-fondo) 60%);
+}
+
+.hero-eyebrow {
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  color: var(--texto-suave);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  line-height: 1.15;
+  margin: 0.2rem 0 1rem;
+  color: var(--rosa-fuerte);
+  text-shadow: 3px 3px 0 var(--crema);
+}
+
+.nombre {
+  color: var(--lavanda);
+}
+
+.emoji-tarta {
+  display: inline-block;
+  animation: bambolear 2.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes bambolear {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+.hero-subtitulo {
+  max-width: 34ch;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+  margin-bottom: 2rem;
+}
+
+.boton-scroll {
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--crema);
+  background: var(--rosa-fuerte);
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 0 var(--sombra);
+  transition: transform 0.15s ease;
+}
+
+.boton-scroll:hover {
+  transform: translateY(-3px);
+}
+
+.boton-scroll:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 var(--sombra);
+}
+
+/* =========================================================
+   Secciones genéricas
+========================================================= */
+.seccion {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.seccion-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--rosa-fuerte);
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.seccion-subtitulo {
+  text-align: center;
+  color: var(--texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================================
+   Carta
+========================================================= */
+.carta-seccion {
+  display: flex;
+  justify-content: center;
+}
+
+.carta {
+  position: relative;
+  background: var(--crema);
+  border-radius: 28px;
+  padding: 3rem 2.2rem;
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 16px 0 var(--rosa-suave);
+  border: 3px dashed var(--rosa-suave);
+}
+
+.carta-sello {
+  position: absolute;
+  top: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.4rem;
+  background: var(--crema);
+  padding: 0 0.5rem;
+}
+
+.carta-titulo {
+  font-family: var(--fuente-titulo);
+  color: var(--lavanda);
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.carta-texto {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texto);
+  white-space: pre-line;
+}
+
+.carta-firma {
+  margin-top: 1.5rem;
+  font-family: var(--fuente-titulo);
+  color: var(--rosa-fuerte);
+  font-size: 1.2rem;
+}
+
+/* =========================================================
+   Galería
+========================================================= */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+
+.foto-tarjeta {
+  margin: 0;
+  background: var(--crema);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 0 var(--rosa-suave);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.foto-tarjeta:hover {
+  transform: translateY(-6px) rotate(-1deg);
+}
+
+.foto-tarjeta img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--rosa-suave);
+}
+
+.foto-tarjeta figcaption {
+  padding: 0.8rem 1rem 1.1rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+/* =========================================================
+   Sorpresa / regalo interactivo
+========================================================= */
+.sorpresa-seccion {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7rem;
+}
+
+.regalo-caja {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.regalo-emoji {
+  display: inline-block;
+  font-size: 5rem;
+  transition: transform 0.25s ease;
+}
+
+.regalo-caja.abierto .regalo-emoji {
+  transform: scale(1.25) rotate(-8deg);
+}
+
+.regalo-texto {
+  margin-top: 1rem;
+  font-family: var(--fuente-titulo);
+  font-size: 1.3rem;
+  color: var(--rosa-fuerte);
+  max-width: 32ch;
+}
+
+/* =========================================================
+   Lightbox
+========================================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(107, 63, 99, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 2rem;
+}
+
+.lightbox.activo {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 0 0 8px var(--crema);
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--crema);
+  color: var(--rosa-fuerte);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Pie de página
+========================================================= */
+.pie {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.gif-final {
+  width: min(100%, 480px);
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   Accesibilidad: respeta reduce-motion
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .particula-flotante,
+  .emoji-tarta,
+  .boton-scroll,
+  .foto-tarjeta,
+  .regalo-emoji {
+    animation: none !important;
+    transition: none !important;
+  }
+}

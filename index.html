@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz cumpleaños! 🎀</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <audio id="musica-fondo" loop>
+  <source src="songs/melody.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Corazones y estrellitas flotando de fondo -->
+  <div id="fondo-flotante" class="fondo-flotante" aria-hidden="true"></div>
+
+  <!-- Cabecera / Hero -->
+  <header class="hero">
+    <p class="hero-eyebrow">Para mi futura esposa</p>
+    <h1 class="hero-titulo">
+      ¡Feliz cumpleaños,<br><span class="nombre">MI NIÑITA</span>! <br> <img src="img/melody.png" alt="Tarta de cumpleaños" class="emoji-tarta"></span>
+    </h1>
+    <p class="hero-subtitulo">Te amo mucho</p>
+    <a href="#galeria" class="boton-scroll">Ver nuestras fotos ↓</a>
+  </header>
+
+  <!-- Mensaje / carta -->
+  <section class="seccion carta-seccion" id="carta">
+    <div class="carta">
+      <span class="carta-sello">💌</span>
+      <h2 class="carta-titulo">Para ti</h2>
+      <p class="carta-texto">
+        Mi princesita, te amo muchísimo y eres la persona más importante de mi vida. De verdad todos los días me levanto
+        queriendo hablar contigo, y al acabarlo solo quiero contarte todo lo que me pasó. Contigo me siento muy feliz, no hay
+        nadie con quien me sienta más cómodo. Podría pasar todo mi timepo contigo y no me aburriría. Solo quiero
+        que seas feliz y nada odio más que verte triste, tu sonrisa realmente me alegra los días.
+         Feliz cumpleaños mi niñita que lo pases muy bien este día.
+      </p>
+    </div>
+  </section>
+
+  <!-- Galería de fotos -->
+  <section class="seccion galeria-seccion" id="galeria">
+    <h2 class="seccion-titulo">Mis fotos favoritas de mi niñita<span class="emoji">📸</span></h2>
+    <p class="seccion-subtitulo">Pulsa una foto para verla más grande</p>
+
+    <div class="galeria" id="galeria-fotos">
+      <!-- Cada figura es un hueco para una foto. Sustituye el src por tus fotos en la carpeta /images -->
+      <figure class="foto-tarjeta">
+        <img src="img/espejo.jpeg" alt="Foto juntos 1" loading="lazy">
+        <figcaption>Me gusta mucho esta foto</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/escapista.jpeg" alt="Foto juntos 2" loading="lazy">
+        <figcaption>Cuándo casi nos pilla tu papá</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/padme.jpeg" alt="Foto juntos 3" loading="lazy">
+        <figcaption>Mi Padme 💗</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/niñita.jpeg" alt="Foto juntos 4" loading="lazy">
+        <figcaption>Una de mis fotos favoritas de mi niñita</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/juntos.jpg" alt="Foto juntos 6" loading="lazy">
+        <figcaption>Mi niñita me come</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/picrew.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Me pareció muy tierno cuándo me lo mandaste</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/baldurs.jfif" alt="Foto juntos 6" loading="lazy">
+        <figcaption>Galileo y Evelynn</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/piedras.jpeg" alt="Foto juntos 4" loading="lazy">
+        <figcaption>En las fiestas de piedras</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/sushi.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Sushi malo</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/sushi.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Sushi malo</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/symbarun.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Iván y Abella</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/roblox.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Skin que le compré a mi niñita</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/tomodachi.jpeg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Mi princesa y yo en el tomodachi</figcaption>
+      </figure>
+      <figure class="foto-tarjeta">
+        <img src="img/primera.jpg" alt="Foto juntos 5" loading="lazy">
+        <figcaption>Primera foto que tengo nuestra juntos</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Sorpresa final -->
+  <section class="seccion sorpresa-seccion" id="sorpresa">
+    <div class="regalo-caja" id="caja-regalo">
+      <img src = "img/regalo.png" id="regalo-emoji" class="regalo-emoji">
+      <p class="regalo-texto" id="regalo-texto">Pulsa el regalo…</p>
+    </div>
+  </section>
+
+  <!-- Lightbox para ver la foto en grande -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-cerrar" id="lightbox-cerrar" aria-label="Cerrar">✕</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
+  <section class="seccion gif-seccion" aria-label="GIF de cumpleaños">
+    <img src="img/madoka.gif" alt="GIF de cumpleaños" class="gif-final">
+  </section>
+
+  <footer class="pie">
+    <p>Te amo mucho mi niñita 💖 Feliz cumpleaños!</p>
+  </footer>
+
+ 
+
+  <script src="js/script.js"></script>
+</body>
+</html>
